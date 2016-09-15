@@ -107,9 +107,6 @@ void SoftwareRenderer::resetFormatIfChanged(const sp<AMessage> &format) {
         case OMX_COLOR_FormatYUV420SemiPlanar:
         {
             if (!runningInEmulator()) {
-                halFormat = HAL_PIXEL_FORMAT_YV12;
-                bufWidth = (mCropWidth + 1) & ~1;
-                bufHeight = (mCropHeight + 1) & ~1;
                 break;
             }
 
